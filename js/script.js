@@ -1,5 +1,12 @@
 const mario = document.querySelector('.mario')
 const pipe = document.querySelector('.pipe')
+const btnRestart = document.querySelector('.btn-restart')
+
+const restartAnimation = ()=>{
+    btnRestart.classList.add('visible')
+    btnRestart.classList.remove('invisible')
+    btnRestart.classList.add('fade')
+}
 
 const jump = ()=>{
     mario.classList.add('jump')
@@ -29,8 +36,10 @@ const loop = setInterval(()=>{
         mario.src = './imagens/game-over.png'
 
         clearInterval(loop)
+        restartAnimation()
     }
 
 }, 10 )
 
 document.addEventListener('touchstart', jump)
+document.addEventListener('keydown', jump)
