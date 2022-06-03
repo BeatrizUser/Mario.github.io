@@ -2,7 +2,7 @@
 
 ### Captura de tela
 
-![](./screenshot.jpg)
+![](./imagens/screenshot.jpg)
 
 ### Links
 
