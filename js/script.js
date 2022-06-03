@@ -16,7 +16,7 @@ const loop = setInterval(()=>{
     const marioPosition = +window.getComputedStyle(mario).bottom.replace("px","")
 
     
-    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 90  ){
+    if (pipePosition <= 90 && pipePosition > 0 && marioPosition < 80  ){
         
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
@@ -24,8 +24,8 @@ const loop = setInterval(()=>{
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
 
-        mario.style.width = '70px'
-        mario.style.marginLeft = '50px'
+        mario.style.width = '50px'
+        mario.style.marginLeft = '45px'
         mario.src = './imagens/game-over.png'
 
         clearInterval(loop)
@@ -33,4 +33,4 @@ const loop = setInterval(()=>{
 
 }, 10 )
 
-document.addEventListener('keydown', jump)
+document.addEventListener('touchstart', jump)
