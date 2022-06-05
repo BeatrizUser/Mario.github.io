@@ -2,9 +2,10 @@ const mario = document.querySelector('.mario')
 const pipe = document.querySelector('.pipe')
 const btnRestart = document.querySelector('.btn-restart')
 const placarPoints = document.querySelector('.counterPoints')
+const temporizador = document.querySelector('.counterTime')
 var highScore = 0
 var pointsCounter = 0
-
+var timer = 320
 
 const contador = ()=>{
     var points = pointsCounter
@@ -34,6 +35,14 @@ const jump = ()=>{
 
     }, 500)
 }
+const contadorRegressivo = setInterval(()=>{
+
+    var contador = eval(timer - 1)
+    timer = contador
+
+    console.log(contador)
+
+},1000)
 
 const loop = setInterval(()=>{
     
@@ -56,11 +65,13 @@ const loop = setInterval(()=>{
         highScore = highScore < pointsCounter ? `High Score:${pointsCounter}` : `High Score:${highScore}`;
         console.log(highScore)
         clearInterval(loop)
+        clearInterval(contadorRegressivo)
         restartAnimation()
         console.log('Perdeu!')
     }
     else{
         placarPoints.innerHTML = pointsCounter
+        temporizador.innerHTML = timer
     }
 
 }, 10 )
