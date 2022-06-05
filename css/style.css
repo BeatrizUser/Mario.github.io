@@ -1,15 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@font-face {
+    font-family: 'Mario';
+    src: url('/fonts/Super-Mario-World.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Mario', sans-serif;
     text-decoration: none;
-    color: #000;
+    color: #fff;
+    -webkit-text-stroke: 0.1em #000;
+}
+.vidas{
+    text-align: center;
+}
+.vidas .marioTitle{
+    color: red;
+    text-transform: uppercase;
+}
+.moeda{
+    height: 30px;
+}
+.coins{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+.points{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.placar{
+    padding: 0px 10vw;
+    height: 75px;
+    display: flex;
+    font-size: 1.2em;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.SquareCounter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.marioBonus{
+    font-size: 2em;
+}
+.square a{
+    margin: -11px;
+    height: 64px;
+    width: 74px;
+    border: 8px solid rgb(51, 156, 241);
+    border-radius: 17px;
+    display: block;
+}
+.square{
+    height: 70px;
+    width: 80px;
+    border: 14px solid #000;
+    border-radius: 20px;
+}
+.time h3{
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(247, 222, 82)!important;
 }
 h2{
     margin-top: 75px;
-    filter: invert(10%);
+    font-size: 1.2em;
 }
 .invisible{
     visibility: hidden;
@@ -40,11 +108,14 @@ h2{
 .game-board {
     width: 100vw;
     height: 90vh;
-    border-bottom: 15px solid rgb(10, 105, 2);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87ceeb, #e0f6ff);
+}
+.grama{
+    height: 4vw;
+    animation: pipe-animation 2s infinite;
 }
 .clouds1{
     position: absolute;
