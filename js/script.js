@@ -2,20 +2,21 @@ const mario = document.querySelector('.mario')
 const pipe = document.querySelector('.pipe')
 const btnRestart = document.querySelector('.btn-restart')
 const placarPoints = document.querySelector('.counterPoints')
-var pointscounter = 00000
+var highScore = 0
+var pointsCounter = 0
+
 
 const contador = ()=>{
-    var points = pointscounter
+    var points = pointsCounter
     const pipePosition = pipe.offsetLeft;
-    const marioPosition = +window.getComputedStyle(mario).bottom.replace("px","")
-    
-    if (pipePosition <= 90 && pipePosition > 0 && marioPosition < 80  ){
-        console.log('passo!')
+
+    if (pipePosition <= 180){
+        placarPoints.textContent.valueOf = pointsCounter
+        pointsCounter = eval(points +  10)
+        console.log('pulou!')
     }
     else{
-        placarPoints.textContent.valueOf = pointscounter
-        pointscounter = eval(points +  10)
-        console.log(pointscounter)
+        console.log('não valeu!')
     }
 }
 
@@ -51,12 +52,15 @@ const loop = setInterval(()=>{
         mario.style.width = '50px'
         mario.style.marginLeft = '45px'
         mario.src = './imagens/game-over.png'
-
+        
+        highScore = highScore < pointsCounter ? `High Score:${pointsCounter}` : `High Score:${highScore}`;
+        console.log(highScore)
         clearInterval(loop)
         restartAnimation()
+        console.log('Perdeu!')
     }
     else{
-        placarPoints.innerHTML = pointscounter 
+        placarPoints.innerHTML = pointsCounter
     }
 
 }, 10 )
