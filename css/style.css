@@ -16,25 +16,31 @@
     text-transform: uppercase;
 }
 .moeda{
-    height: 30px;
+    width: 4vw;
 }
-.moedinhas1{
+.moedinhas{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.moedinhas a{
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 .coins{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     flex-wrap: nowrap;
     align-content: center;
 }
 .points{
     width: 150px;
     display: flex;
+    align-items: flex-end;
     flex-direction: column;
-    align-items: center;
 }
 .placar{
     margin-top: 2em;
@@ -54,21 +60,10 @@
     justify-content: center;
 }
 .marioBonus{
-    font-size: 2em;
-}
-.square a{
-    margin: -11px;
-    height: 64px;
-    width: 74px;
-    border: 8px solid rgb(51, 156, 241);
-    border-radius: 17px;
-    display: block;
+    font-size: 5vw;
 }
 .square{
-    height: 70px;
-    width: 80px;
-    border: 14px solid #000;
-    border-radius: 20px;
+    max-height: 10vw;
 }
 .time h3{
     text-align: center;
@@ -77,13 +72,14 @@
 }
 h3{
     padding: 5px;
+    font-size: 3vw;
 }
 h2{
     margin-top: 75px;
-    font-size: 1.2em;
+    font-size: 3vw;
 }
 h1{
-    font-size: 1.8em;
+    font-size: 4vw;
 }
 .invisible{
     visibility: hidden;
@@ -104,6 +100,7 @@ h1{
     animation: fade-in 1s ease-in-out
 }
 .btn-restart{
+    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
@@ -111,19 +108,21 @@ h1{
     align-items: center;
     justify-content: center;
     border: none;
+    bottom: -50px;
 }
 .game-board {
     width: 100vw;
-    height: 90vh;
+    height: 89vh;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87ceeb, #e0f6ff);
 }
 .grama{
-    width: 100vw;
+    position: relative;
+    width: 200vw;
     height: 40px;
-    animation: pipe-animation 2s infinite;
+    animation: grama-animation 0.5s infinite linear;
 }
 .clouds1{
     position: absolute;
@@ -142,7 +141,18 @@ h1{
     bottom: 0;
     height: 70px;
     width: 60px;
-    animation: pipe-animation 2s infinite linear;
+
+    animation-name: pipe-animation;
+    animation-iteration-count:1;
+    animation-duration: 2.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.looser{
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    left: 40px;
 }
 .mario{
     width: 100px;
@@ -189,6 +199,16 @@ h1{
         right: 100%;
     }
 }
+@keyframes grama-animation {
+    0%{
+        right: 0px;
+    }
+
+    100%{
+        right: 25%;
+    }
+}
+
 @keyframes fade-in{
     from{
         opacity: 0%;
