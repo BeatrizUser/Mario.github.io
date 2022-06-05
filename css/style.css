@@ -75,6 +75,9 @@
     text-transform: uppercase;
     color: rgb(247, 222, 82)!important;
 }
+h3{
+    padding: 5px;
+}
 h2{
     margin-top: 75px;
     font-size: 1.2em;
