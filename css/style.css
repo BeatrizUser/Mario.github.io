@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
-@font-face {
-    font-family: 'Mario';
-    src: url('/fonts/Super-Mario-World.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Mario', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     text-decoration: none;
     color: #fff;
     -webkit-text-stroke: 0.1em #000;
