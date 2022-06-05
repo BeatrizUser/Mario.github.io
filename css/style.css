@@ -24,6 +24,11 @@
 .moeda{
     height: 30px;
 }
+.moedinhas1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .coins{
     display: flex;
     flex-direction: row;
@@ -38,10 +43,11 @@
     align-items: center;
 }
 .placar{
+    margin-top: 2em;
     padding: 0px 10vw;
     height: 75px;
     display: flex;
-    font-size: 1.2em;
+    font-size: 1em;
     flex-direction: row;
     align-content: center;
     justify-content: space-around;
@@ -114,7 +120,8 @@ h2{
     background: linear-gradient(#87ceeb, #e0f6ff);
 }
 .grama{
-    height: 4vw;
+    width: 100vw;
+    height: 40px;
     animation: pipe-animation 2s infinite;
 }
 .clouds1{
